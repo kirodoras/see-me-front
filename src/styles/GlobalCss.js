@@ -22,6 +22,7 @@ const GlobalCss = createGlobalStyle`
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
+        background-size: cover;
         object-fit: cover;
         font-family: 'Poppins', sans-serif;
     }
