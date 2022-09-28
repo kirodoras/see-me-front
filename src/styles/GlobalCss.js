@@ -31,7 +31,6 @@ const GlobalCss = createGlobalStyle`
         max-width: 90%;
         height: 90%;
         margin-top: 1.3rem;
-        border: 1px solid white;
     }
 `;
 
