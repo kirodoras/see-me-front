@@ -1,11 +1,22 @@
+import { useState } from 'react';
+import dayjs from 'dayjs';
 import Styled from 'styled-components';
 
 export default function Date() {
+    const [date, setDate] = useState(dateFormat());
+    setInterval(() => {
+        setDate(dateFormat());
+    }, 1000);
     return (
         <DateStyled>
-            1:00 PM | Sun, Jun 6
+            {date}
         </DateStyled>
     );
+}
+
+function dateFormat() {
+    const date = dayjs().format('h:mm A | MMM DD');
+    return date;
 }
 
 const DateStyled = Styled.main`
