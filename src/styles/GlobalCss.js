@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import background from '../assets/background.svg';
 
 const GlobalCss = createGlobalStyle`
     * {
@@ -18,7 +17,6 @@ const GlobalCss = createGlobalStyle`
         max-width: 100%;
         height: 100vh;
         background: #0f152b;
-        background-image: url(${background});
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
