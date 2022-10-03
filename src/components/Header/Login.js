@@ -1,14 +1,14 @@
 import { useRef } from "react";
-import { useScript } from "../hooks/useScript";
+import { useScript } from "../../hooks/useScript";
 import jwt_decode from 'jwt-decode';
 
 import { useContext } from "react";
-import UserContext from "../contexts/UserContext";
+import UserContext from "../../contexts/UserContext";
 
 import Styled from 'styled-components';
-import { googleApiUrl, googleClientId } from "../env/env";
+import { googleApiUrl, googleClientId } from "../../env/env";
 
-import guest from '../assets/guest.jpg';
+import guest from '../../assets/guest.jpg';
 
 export default function Login() {
     const googlebuttonref = useRef();
@@ -18,6 +18,7 @@ export default function Login() {
         try {
             let userCred = user.credential;
             let payload = await jwt_decode(userCred);
+            console.log({payload});
             setUser(payload);
         } catch {
             alert('Signature error');

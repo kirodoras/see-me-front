@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 import Login from './Login';
 import Date from './Date';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 export default function Header() {
     return (
         <HeaderStyled>
