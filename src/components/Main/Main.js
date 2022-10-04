@@ -15,7 +15,7 @@ const MainStyled = Styled.main`
     width: 100%;
     max-width: 100%;
     height: 80%;
-    color: white;
+    color: #f7f0f5;
     padding-top: 3rem;
     display: flex;
     gap: 2rem;

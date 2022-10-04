@@ -52,7 +52,7 @@ const LoginStyled = Styled.div`
     margin-left: 1.2rem;
 
     img {
-        color: white;
+        color: #f7f0f5;
         width: 3.3rem;
         border-radius: 50%;
     }

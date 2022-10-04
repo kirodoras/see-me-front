@@ -15,5 +15,5 @@ const HomeStyled = Styled.div`
     width: 100%;
     max-width: 100%;
     height: 100%;
-    color: white;
+    color: #f7f0f5;
 `;
