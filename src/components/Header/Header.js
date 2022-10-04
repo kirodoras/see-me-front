@@ -23,6 +23,7 @@ const HeaderStyled = Styled.header`
     justify-content: space-between;
     width: 100%;
     max-width: 100%;
+    height: 5rem;
     color: white;
     &>div {
         display: flex;

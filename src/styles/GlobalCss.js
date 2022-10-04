@@ -27,8 +27,7 @@ const GlobalCss = createGlobalStyle`
     .root {
         width: 90%;
         max-width: 90%;
-        height: 90%;
-        margin-top: 1.3rem;
+        height: 100%;
     }
 `;
 

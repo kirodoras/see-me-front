@@ -1,5 +1,5 @@
 import Header from '../components/Header/Header';
-import Main from '../components/Main';
+import Main from '../components/Main/Main';
 import Styled from 'styled-components';
 
 export default function Home() {
@@ -14,5 +14,6 @@ export default function Home() {
 const HomeStyled = Styled.div`
     width: 100%;
     max-width: 100%;
+    height: 100%;
     color: white;
 `;
