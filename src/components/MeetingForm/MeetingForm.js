@@ -3,22 +3,33 @@ import axios from "axios";
 import Styled from 'styled-components';
 import { backEndUrl } from "../../env/env";
 
+import { useContext } from "react";
+import ChannelContext from "../../contexts/ChannelContext";
+
 export default function MeetingForm() {
+    const { setChannel } = useContext(ChannelContext);
     const [channelName, setChannelName] = useState('');
     const [disabled, setDisabled] = useState(false);
     const [buttonContent, setButtonContent] = useState('New Meeting');
 
-    function submitData(event){
+    function submitData(event) {
         event.preventDefault();
         setDisabled(true);
         setButtonContent('Creating...');
         const URL = `${backEndUrl}/token?channelName=${channelName}`;
         const promise = axios.get(URL);
         promise.then((response) => {
-            console.log(response);
+            const token = response.data.token;
             setDisabled(false);
             setButtonContent('New Meeting');
+            setChannel({
+                channelName,
+                token,
+            });
         }).catch((err) => {
+            console.log({
+                err,
+            });
             alert("Error in create/join channel");
             setDisabled(false);
             setButtonContent('New Meeting');
@@ -28,15 +39,15 @@ export default function MeetingForm() {
         <MeetingFormStyled>
             <h3>Create or Join a Meeting</h3>
             <FormStyled onSubmit={submitData}>
-                <button 
+                <button
                     disabled={disabled}
                     type="submit">
                     {buttonContent}
                 </button>
                 <input
-                    required 
+                    required
                     disabled={disabled}
-                    type="text" 
+                    type="text"
                     placeholder="Channel Name"
                     value={channelName}
                     onChange={(e) => setChannelName(e.target.value)} />
