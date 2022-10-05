@@ -4,6 +4,7 @@ import UserContext from "./contexts/UserContext";
 import ChannelContext from "./contexts/ChannelContext";
 
 import Home from "./pages/Home";
+import VideoRoom from "./pages/VideoRoom";
 
 import ResetCss from "./styles/ResetCss";
 import GlobalCss from "./styles/GlobalCss";
@@ -20,6 +21,7 @@ export default function App() {
                     <GlobalCss />
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/room" element={<VideoRoom />} />
                         <Route path="*" element={<>Not found</>} />
                     </Routes>
                 </BrowserRouter>
