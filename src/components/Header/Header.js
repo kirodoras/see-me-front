@@ -28,6 +28,7 @@ const HeaderStyled = Styled.header`
     &>div {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         width: 24rem;
         max-width: 100%;
     }
