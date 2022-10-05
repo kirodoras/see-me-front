@@ -2,11 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import Styled from 'styled-components';
 import { backEndUrl } from "../../env/env";
+import { useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
 import ChannelContext from "../../contexts/ChannelContext";
 
 export default function MeetingForm() {
+    const navigate = useNavigate();
     const { setChannel } = useContext(ChannelContext);
     const [channelName, setChannelName] = useState('');
     const [disabled, setDisabled] = useState(false);
@@ -26,6 +28,7 @@ export default function MeetingForm() {
                 channelName,
                 token,
             });
+            navigate('/room');
         }).catch((err) => {
             console.log({
                 err,
