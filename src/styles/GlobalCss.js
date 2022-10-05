@@ -25,8 +25,9 @@ const GlobalCss = createGlobalStyle`
         font-family: 'Poppins', sans-serif;
     }
     .root {
-        width: 90%;
-        max-width: 90%;
+        width: 75rem;
+        max-width: 75rem;
+        padding: 0 1rem 0 1rem;
         height: 100%;
     }
 `;
