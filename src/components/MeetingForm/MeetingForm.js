@@ -84,6 +84,11 @@ const MeetingFormStyled = Styled.div`
             font-size: 18px;
         }
     }
+    @media(max-width: 23rem) {
+        h3 {
+            font-size: 20px;
+        }
+    }
     @media(max-width: 37rem) {
         height: 50%;
     }
