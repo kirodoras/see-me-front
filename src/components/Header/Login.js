@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { useScript } from "../../hooks/useScript";
 import jwt_decode from 'jwt-decode';
+import axios from "axios";
+import { backEndUrl } from "../../env/env";
 
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
@@ -18,8 +20,13 @@ export default function Login() {
         try {
             let userCred = user.credential;
             let payload = await jwt_decode(userCred);
-            console.log({payload});
-            setUser(payload);
+            const { email, name, picture } = payload;
+            const BODY = { email, name, picture };
+            const URL = `${backEndUrl}/users/login`;
+            const promise = await axios.post(URL, BODY);
+            const userInfo = promise.data;
+            localStorage.setItem('user', JSON.stringify(userInfo));
+            setUser(userInfo);
         } catch {
             alert('Signature error');
         }
