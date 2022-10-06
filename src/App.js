@@ -10,8 +10,17 @@ import ResetCss from "./styles/ResetCss";
 import GlobalCss from "./styles/GlobalCss";
 
 export default function App() {
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState(getUserInfo());
     const [channel, setChannel] = useState("");
+
+    function getUserInfo() {
+        const userInfo = localStorage.getItem('user');
+        if (userInfo) {
+            const userParse = JSON.parse(userInfo);
+            return userParse;
+        }
+        return "";
+    }
 
     return (
         <UserContext.Provider value={{ user, setUser }}>
