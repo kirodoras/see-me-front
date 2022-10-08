@@ -47,7 +47,7 @@ export default function Login() {
     return (
         <LoginStyled>
             <div ref={googlebuttonref}></div>
-            <img src={user ? user.picture : guest} alt="Avatar" />
+            <img src={user ? user.picture : guest} onerror={`this.src=${guest}`} alt="Avatar" />
         </LoginStyled>
     );
 }
