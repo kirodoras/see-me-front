@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
 import ChannelContext from "../../contexts/ChannelContext";
+import Loading from "../Loading/Loading";
 
 export default function MeetingForm() {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function MeetingForm() {
     function submitData(event) {
         event.preventDefault();
         setDisabled(true);
-        setButtonContent('Creating...');
+        setButtonContent(<Loading size="50" />);
         const URL = `${backEndUrl}/token?channelName=${channelName}`;
         const promise = axios.get(URL);
         promise.then((response) => {
@@ -107,6 +108,9 @@ const FormStyled = Styled.form`
         border-radius: 0.625rem; 
     }
     button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 1.25rem;
         width: 15rem;
         max-width: 100%;
