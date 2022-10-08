@@ -1,11 +1,12 @@
 import Styled from 'styled-components';
 import MeetingForm from '../MeetingForm/MeetingForm';
+import Schedule from '../Schedule/Schedule';
+
 export default function Main() {
     return (
         <MainStyled>
             <MeetingForm />
-            <span>
-            </span>
+            <Schedule />
         </MainStyled>
     );
 }
@@ -18,18 +19,6 @@ const MainStyled = Styled.main`
     padding-top: 3rem;
     display: flex;
     gap: 1rem;
-
-    &>span {
-        width: 40%;
-        max-width: 100%;
-        height: 100%;
-        background: rgba( 183, 184, 191, 0.45 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 10px );
-        -webkit-backdrop-filter: blur( 10px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
 
     @media(max-width: 68.75rem) {
         flex-direction: column;
