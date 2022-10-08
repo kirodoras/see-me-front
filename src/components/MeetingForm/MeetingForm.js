@@ -53,6 +53,7 @@ export default function MeetingForm() {
                     disabled={disabled}
                     type="text"
                     placeholder="Channel Name"
+                    maxLength="8"
                     value={channelName}
                     onChange={(e) => setChannelName(e.target.value)} />
             </FormStyled>
@@ -118,6 +119,7 @@ const FormStyled = Styled.form`
         border-radius: 0.625rem;
         background: #5179fd;
         color: #f7f0f5;
+        cursor: pointer;
     }
     @media(max-width: 37rem) {
         flex-direction: column-reverse;
