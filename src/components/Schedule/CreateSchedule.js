@@ -6,7 +6,8 @@ import { backEndUrl } from "../../env/env";
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 import Loading from '../Loading/Loading';
-export default function CreateSchedule() {
+
+export default function CreateSchedule({ update, setUpdate }) {
     const { user } = useContext(UserContext);
     const [title, setTitle] = useState('');
     const [time, setTime] = useState('');
@@ -27,6 +28,7 @@ export default function CreateSchedule() {
             setTitle("");
             setTime("");
             setButtonContent('+');
+            setUpdate(!update);
         }).catch((err) => {
             console.log({
                 err,
@@ -44,6 +46,7 @@ export default function CreateSchedule() {
                     disabled={disabled}
                     type="text"
                     placeholder="Title"
+                    maxLength="8"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)} />
                 <input
@@ -97,6 +100,7 @@ const FormStyled = Styled.form`
         border-radius: 0.625rem;
         background: #f03a47;
         color: #f7f0f5;
+        cursor: pointer;
     }
     @media(max-width: 29.4rem) {
         gap: 0.2rem;
