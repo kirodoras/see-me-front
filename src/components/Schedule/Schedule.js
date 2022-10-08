@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import Styled from 'styled-components';
 import CreateSchedule from './CreateSchedule';
+import ShowSchedule from './ShowSchedule';
+
 export default function Schedule() {
+    const [update, setUpdate] = useState(false);
     return (
         <ScheduleStyled>
-            <CreateSchedule />
+            <CreateSchedule update={update} setUpdate={setUpdate} />
+            <ShowSchedule update={update} setUpdate={setUpdate} />
         </ScheduleStyled>
     );
 }
@@ -23,4 +28,10 @@ const ScheduleStyled = Styled.span`
     -webkit-backdrop-filter: blur( 10px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    @media(max-width: 68.75rem) {
+        height: 70%;
+    }
+    @media(max-width: 40rem) {
+        height: 60%;
+    }
 `;
