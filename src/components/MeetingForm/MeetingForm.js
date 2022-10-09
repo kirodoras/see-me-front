@@ -73,7 +73,7 @@ const MeetingFormStyled = Styled.div`
     -webkit-backdrop-filter: blur( 10px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-
+    z-index: 3;
     h3 {
         font-weight: 400;
         font-size: 24px;
@@ -81,6 +81,7 @@ const MeetingFormStyled = Styled.div`
         margin: 0.5rem 0 1rem 0;
     }
     @media(max-height: 42rem) {
+        height: 35%;
         h3 {
             margin: 0.3rem 0 0.3rem 0;
             font-size: 18px;
@@ -131,6 +132,19 @@ const FormStyled = Styled.form`
             width: 100%;
             height: 3.2rem;
         }  
+    }
+    @media(max-height: 41rem) {
+        input {
+            width: 100%;
+            height: 2.5rem;
+        } 
+        button {
+            width: 100%;
+            height: 2.5rem;
+        }  
+    }
+    @media(max-height: 36.25rem) {
+         flex-direction: row-reverse;
     }
 `;
 
