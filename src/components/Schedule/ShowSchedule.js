@@ -22,7 +22,11 @@ export default function ShowSchedule({ update, setUpdate }) {
                 console.log({
                     err,
                 });
-                alert("Make sure you are logged in, error in show schedule");
+                if (err.response.data === "Token expired") {
+                    alert("Your session has expired, please log in again");
+                } else {
+                    alert("Make sure you are logged in, error in show schedule");
+                }
             });
         }
     }, [user.token, update]);
